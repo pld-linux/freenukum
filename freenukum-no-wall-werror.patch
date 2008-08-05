@@ -1,0 +1,12 @@
+diff -burN freenukum-0.2.10-as-needed/configure.in freenukum-0.2.10/configure.in
+--- freenukum-0.2.10-as-needed/configure.in	2008-08-05 09:09:26.581279411 +0000
++++ freenukum-0.2.10/configure.in	2008-08-05 09:14:48.863539435 +0000
+@@ -73,7 +73,7 @@
+ AC_CHECK_PROG(CONVERT, convert, "yes", "no", [$PATH])
+ AM_CONDITIONAL(CREATEICONS, test x"$CONVERT" = xyes)
+ 
+-CFLAGS="$CFLAGS -Wall -Werror "`sdl-config --cflags`
++CFLAGS="$CFLAGS "`sdl-config --cflags`
+ LIBS="$LIBS `sdl-config --libs`"
+ 
+ AC_CONFIG_HEADER(src/config.h)

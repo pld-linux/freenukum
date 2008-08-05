@@ -1,0 +1,39 @@
+diff -burN freenukum-0.2.10.orig/configure.in freenukum-0.2.10/configure.in
+--- freenukum-0.2.10.orig/configure.in	2008-08-05 09:03:06.105068959 +0000
++++ freenukum-0.2.10/configure.in	2008-08-05 09:09:26.581279411 +0000
+@@ -27,7 +27,7 @@
+       [ sdlttf_lib="no" ])
+   if test "x$sdlttf_headers" = "xyes" -a "x$sdlttf_lib" = "xyes"; then
+     have_sdlttf="yes"
+-    LDFLAGS="$LDFLAGS -lSDL_ttf"
++    LIBS="$LIBS -lSDL_ttf"
+   else
+     have_sdlttf="no"
+   fi
+@@ -40,7 +40,7 @@
+                      [have_curl="yes"],
+                      [have_curl="no"])
+ if test "x$have_curl" = "xyes"; then
+-  LDFLAGS="$LDFLAGS $LIBCURL"
++  LIBS="$LIBS $LIBCURL"
+ fi
+ 
+ dnl #
+@@ -52,7 +52,7 @@
+ if test "x$have_libzip" = "xyes"; then
+   AC_DEFINE([HAVE_LIBZIP], [1], [Define to 1 if libzip is available])
+   CFLAGS="$CFLAGS $LIBZIP_CFLAGS"
+-  LDFLAGS="$LDFLAGS $LIBZIP_LIBS"
++  LIBS="$LIBS $LIBZIP_LIBS"
+ fi
+ 
+ dnl #---------------------------------------------------------------
+@@ -74,7 +74,7 @@
+ AM_CONDITIONAL(CREATEICONS, test x"$CONVERT" = xyes)
+ 
+ CFLAGS="$CFLAGS -Wall -Werror "`sdl-config --cflags`
+-LDFLAGS="$LDFLAGS "`sdl-config --libs`
++LIBS="$LIBS `sdl-config --libs`"
+ 
+ AC_CONFIG_HEADER(src/config.h)
+ 
