@@ -2,7 +2,7 @@ Summary:	clone of duke nukem
 Summary(pl.UTF-8):	klon gry duke nukem
 Name:		freenukum
 Version:	0.2.10
-Release:	1
+Release:	2
 License:	GPL v3
 Group:		X11/Applications/Games
 Source0:	http://launchpad.net/freenukum/trunk/0.2/+download/%{name}-%{version}.tar.gz
